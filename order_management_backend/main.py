@@ -328,11 +328,12 @@ async def check_orders_and_send_mail():
     for order in orders:
         time_gap = now - order.created_at
         time_gap_in_min = time_gap.total_seconds() / 60
+ 	user = db.query(database_models.User).filter(
+        database_models.User.id == order.user_id).first()
 
         if time_gap_in_min > 10:
             email = EmailSchema(
-            email="pattemsrihari7@gmail.com",
-             subject="Delivery Delay Notification 🚚",
+            email= user.email,             subject="Delivery Delay Notification 🚚",
                 body=f"""
                 <html>
                 <body style="font-family: Arial, sans-serif;">
