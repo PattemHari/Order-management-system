@@ -68,6 +68,7 @@ def getProduct(db: Session = Depends(get_db), payload: dict = Depends(auth.verif
 
 @app.get("/getData")
 def getData(db: Session = Depends(get_db)):
+    #This function is for testing purpose only, it will return all the products without authentication
     return db.query(database_models.Product).all()
 
 @app.post("/cart/add")
