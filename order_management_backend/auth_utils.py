@@ -8,7 +8,6 @@ from jose import jwt
 SECRET_KEY = "b6e4a9c5d80f4f1f97b7d8b3c04a7e6e5c3d9a7f4b8c2e1a9d6f8e7c3a5b1d9e"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24  # e.g., 1 day
-#Hari is teting 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # password helpers
